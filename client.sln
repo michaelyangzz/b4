@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "src\src.csproj", "{413F1D71-A7F0-4E60-A44B-263C5CFAC3AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{27EA7A5E-3487-41BD-8A18-7CFB116DE35E}"
+	ProjectSection(SolutionItems) = preProject
+		.angular-cli.json = .angular-cli.json
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		karma.conf.js = karma.conf.js
+		package-lock.json = package-lock.json
+		package.json = package.json
+		protractor.conf.js = protractor.conf.js
+		README.md = README.md
+		tsconfig.json = tsconfig.json
+		tslint.json = tslint.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myserver", "myserver\myserver.csproj", "{B75D345B-016F-43B3-8542-BA0E19D4E556}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{413F1D71-A7F0-4E60-A44B-263C5CFAC3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{413F1D71-A7F0-4E60-A44B-263C5CFAC3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{413F1D71-A7F0-4E60-A44B-263C5CFAC3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{413F1D71-A7F0-4E60-A44B-263C5CFAC3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75D345B-016F-43B3-8542-BA0E19D4E556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75D345B-016F-43B3-8542-BA0E19D4E556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75D345B-016F-43B3-8542-BA0E19D4E556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75D345B-016F-43B3-8542-BA0E19D4E556}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9887E2B-4E1F-43C2-990F-0F678EB67834}
+	EndGlobalSection
+EndGlobal

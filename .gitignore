@@ -44,4 +44,6 @@ testem.log
 Thumbs.db
 
 # vs files
-/.vs
+.vs
+bin
+obj
