@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+<PropertyGroup>
+  <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+</PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,6 +67,12 @@
     <None Include="assets\.gitkeep" />
     <None Include="tsconfig.app.json" />
     <None Include="tsconfig.spec.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\components\" />
+    <Folder Include="app\directives\" />
+    <Folder Include="app\pipes\" />
+    <Folder Include="app\services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
