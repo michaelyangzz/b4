@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { AppUiModule } from './app-ui/app-ui.module';
 
 import { AppComponent } from './app.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule, AppUiModule
