@@ -1,7 +1,7 @@
 <div class="input-group">
   <input class="form-control border-right-0" type="text" placeholder="Search" aria-label="Search">
   <div class="input-group-append">
-    <div class="input-group-text search-box-Button">
+    <div class="input-group-text border-left-0 search-box-Button" [@heroState]="ss" (click)="toggle()">
       <span class="oi oi-magnifying-glass"></span>
     </div>
   </div>
