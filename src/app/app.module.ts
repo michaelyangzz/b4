@@ -2,15 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { IfDataToggleDirective } from './directives/if-data-toggle.directive';
-import { LeftbarService } from './services/leftbar.service';
 import { BusyService } from './services/busy.service';
+import { SiderBarService } from './services/sider-bar.service';
 import { BreadComponent } from './components/bread/bread.component';
 import { Demo2Component } from './components/demo2/demo2.component';
 import { Subfunction1Component } from './components/subfunction1/subfunction1.component';
@@ -30,8 +27,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
     HomeComponent,
     FooterComponent,
     DemoComponent,
@@ -56,7 +51,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [LeftbarService, BusyService],
+  providers: [BusyService, SiderBarService],
   bootstrap: [App2Component]
 })
 export class AppModule { }

@@ -9,7 +9,43 @@ export class HeaderItem {
                     { id: 2, name: '模块而', iconName: null, path: 'demo1', isActive: true, disabled: false, childs: [] },
                     { id: 2, name: '模块而', iconName: null, path: 'demo1', isActive: true, disabled: false, childs: [] },
                     { id: 2, name: '模块而', iconName: null, path: 'demo2', isActive: true, disabled: false, childs: [] },
-                    { id: 2, name: '模块而', iconName: null, path: 'demo2', isActive: true, disabled: false, childs: [] }
+                    {
+                        id: 2, name: '模块而', iconName: null, path: 'demo2', isActive: true, disabled: false,
+                        childs:
+                            [
+                                { id: 2, name: '左边功能1', iconName: null, path: 'demo1', isActive: false, disabled: false, childs: [] },
+                                { id: 2, name: '左边功能2', iconName: null, path: 'demo1', isActive: false, disabled: false, childs: [] },
+                                {
+                                    id: 2, name: '左边功能3', iconName: null, path: 'demo1', isActive: false, disabled: false,
+                                    childs:
+                                        [
+                                            {
+                                                id: 2, name: '左边功能33', iconName: null,
+                                                path: 'demo1', isActive: false,
+                                                disabled: false, childs: []
+                                            },
+                                            {
+                                                id: 2, name: '左边功能33', iconName: null,
+                                                path: 'demo1', isActive: false,
+                                                disabled: false, childs:
+                                                [
+                                                    {
+                                                        id: 2, name: '左边功能333', iconName: null,
+                                                        path: 'demo1', isActive: false,
+                                                        disabled: false, childs: []
+                                                    },
+                                                    {
+                                                        id: 2, name: '左边功能333', iconName: null,
+                                                        path: 'demo1', isActive: false,
+                                                        disabled: false, childs: []
+                                                    }
+                                                ]
+                                            },
+                                        ]
+                                },
+                                { id: 2, name: '左边功能4', iconName: null, path: 'demo2', isActive: false, disabled: false, childs: [] }
+                            ]
+                    }
                 ]
         },
         {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BusyService } from '../services/busy.service';
+import { SiderBarService } from '../services/sider-bar.service';
 import { Router, NavigationStart } from '@angular/router';
 import { pipe } from 'rxjs/util/pipe';
 import { filter } from 'rxjs/operators';
@@ -14,7 +15,7 @@ import { HeaderItem } from '../model/header-item';
 export class App2Component implements OnInit {
   HeaderItems = HeaderItem.list;
   breadItems = ['功夫熊猫', '我方深刻', '士大', '士大', '士大'];
-  constructor(private busy: BusyService) { }
+  constructor(private busy: BusyService, public sidersbarservice: SiderBarService) { }
 
   ngOnInit() {
   }

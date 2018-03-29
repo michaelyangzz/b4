@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HeaderItem } from '../model/header-item';
 import { Router } from '@angular/router';
 import { BusyService } from '../services/busy.service';
+import { SiderBarService } from '../services/sider-bar.service';
 import { of } from 'rxjs/observable/of';
 import { delay } from 'rxjs/operators';
 
@@ -13,7 +14,8 @@ import { delay } from 'rxjs/operators';
 export class Nav2Component implements OnInit {
   @Input() headerItems: HeaderItem[] = [];
   navbarShow = false;
-  constructor(private router: Router, private busy: BusyService) { }
+  constructor(private router: Router, private busy: BusyService
+    , private siderBar: SiderBarService) { }
 
   ngOnInit() {
   }
@@ -27,8 +29,7 @@ export class Nav2Component implements OnInit {
 
     // hidden nav
     if (item.path) {
-      this.navbarShow = false;
-      this.router.navigate([item.path]);
+      this.navigatortonew(item);
     }
   }
 
@@ -38,9 +39,14 @@ export class Nav2Component implements OnInit {
     }
     // hidden nav
     if (item.path) {
-      this.navbarShow = false;
-      this.router.navigate([item.path]);
+      this.navigatortonew(item);
     }
+  }
+
+  private navigatortonew(item: HeaderItem) {
+    this.navbarShow = false;
+    this.router.navigate([item.path]);
+    this.siderBar.setSider(item.childs);
   }
 
   togglenavbar() {
