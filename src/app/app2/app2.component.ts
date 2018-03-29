@@ -13,6 +13,7 @@ import { HeaderItem } from '../model/header-item';
 })
 export class App2Component implements OnInit {
   HeaderItems = HeaderItem.list;
+  breadItems = ['功夫熊猫', '我方深刻', '士大', '士大', '士大'];
   constructor(private busy: BusyService) { }
 
   ngOnInit() {

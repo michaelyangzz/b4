@@ -1,6 +1,6 @@
 export class HeaderItem {
     public static list: HeaderItem[] = [
-        { id: 1, name: null, iconName: 'home', path: 'home', isActive: false, disabled: false, childs: [] },
+        { id: 1, name: '主页', iconName: null, path: 'home', isActive: false, disabled: false, childs: [] },
         {
             id: 2, name: '模块而', iconName: null, path: null, isActive: true, disabled: false,
             childs:
