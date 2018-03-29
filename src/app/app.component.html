@@ -1,9 +1,28 @@
+<div *ngIf="busy.isBusy" class="loadingspin fixed-top text-center text-danger">
+  {{busy.busyMessage}}
+</div>
 <app-nav></app-nav>
-
-<main role="main" class="container">
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.
-      <br> All you get is this text and a mostly barebones HTML document.</p>
+<main role="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div *ngIf="leftbar.leftsize" [class]="leftbar.leftsize">
+        <div class="btn-group-vertical py-4 d-none d-md-inline-flex">
+          <button *ngFor="let item of leftbar.items" type="button" class="btn btn-outline-secondary" (click)="secondmenuclick(item)"
+            [class.active]="item.isActive">{{item.name}}</button>
+        </div>
+        <div class="btn-group row py-2 ml-1 d-md-none">
+          <button *ngFor="let item of leftbar.items" type="button" class="btn btn-outline-secondary" (click)="secondmenuclick(item)"
+            [class.active]="item.isActive">{{item.name}}</button>
+        </div>
+      </div>
+      <div [class]="leftbar.rightsize">
+        <div *ngIf="leftbar.isNeeded" class="float-left leftspide d-none d-md-block" (click)="toggleside()">
+          <span class="oi" [ngClass]="{'oi-caret-left':leftbar.leftsize,'oi-caret-right':!leftbar.leftsize}"></span>
+        </div>
+        <app-bread></app-bread>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </main>
+<app-footer></app-footer>

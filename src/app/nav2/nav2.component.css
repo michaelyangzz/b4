@@ -1,0 +1,8 @@
+.navbar-nav .active {
+    font-weight: 600;
+    background-color: rgb(233, 236, 239);
+}
+
+.navbar-nav .nav-item:hover {
+    background-color: rgb(233, 236, 239);
+}

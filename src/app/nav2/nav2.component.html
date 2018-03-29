@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand" routerLink='home' (click)="navbarShow=flase;">Navbar</a>
+  <button class="navbar-toggler" type="button" (click)="togglenavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [class.show]="navbarShow">
+    <ul class="navbar-nav mr-auto">
+      <li *ngFor="let every of headerItems" class="nav-item" 
+      [class.active]="every.isActive" [class.dropdown]="every.childs.length"
+      (click)="clickmenu1(every)">
+        <a class="nav-link" [class.disabled]="every.disabled" [class.dropdown-toggle]="every.childs.length" 
+          appIfDataToggle value="dropdown" [isNeed]="every.childs.length">
+          <i *ngIf="every.iconName" class="material-icons">{{every.iconName}}</i>
+          {{every.name}}
+        </a>
+        <div *ngIf="every.childs.length" class="dropdown-menu">
+          <a *ngFor="let sub of every.childs" class="dropdown-item" [class.disabled]="sub.disabled" (click)="clickmenu2(sub)" >{{sub.name}}</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="search()">Search</button>
+    </form>
+  </div>
+</nav>

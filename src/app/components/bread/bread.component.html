@@ -1,0 +1,7 @@
+<ol class="breadcrumb mybread">
+  <li *ngFor="let item of bs.currentBread; let i=index;" 
+      class="breadcrumb-item"
+      [class.active]="bs.currentBread.length===(i+1)">
+    <strong>{{item}}</strong>
+  </li>
+</ol>
