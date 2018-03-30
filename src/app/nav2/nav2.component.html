@@ -5,7 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse" [class.show]="navbarShow">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto noselect">
       <li *ngFor="let every of headerItems" class="nav-item" 
       [class.active]="every.isActive" [class.dropdown]="every.childs.length"
       (click)="clickmenu1(every)">

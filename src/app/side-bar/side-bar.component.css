@@ -3,10 +3,6 @@
     border: none;
 }
 
-.list-group .list-group-item.open .oi-chevron-right {
-    transform: rotate(90deg);
-}
-
 .list-group .list-group-item.open>.list-group {
     display: flex;
 }

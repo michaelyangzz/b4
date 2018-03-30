@@ -5,7 +5,7 @@ import { Router, NavigationStart } from '@angular/router';
 import { pipe } from 'rxjs/util/pipe';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs/Subscription';
-import { HeaderItem } from '../model/header-item';
+import { HeaderItem, ConvertViewModel, HeaderEntity } from '../model/header-item';
 
 @Component({
   selector: 'app-app2',
@@ -13,7 +13,7 @@ import { HeaderItem } from '../model/header-item';
   styleUrls: ['./app2.component.css']
 })
 export class App2Component implements OnInit {
-  HeaderItems = HeaderItem.list;
+  HeaderItems = ConvertViewModel(HeaderEntity.list);
   constructor(public busy: BusyService, public sidersbarservice: SiderBarService) { }
 
   ngOnInit() {
