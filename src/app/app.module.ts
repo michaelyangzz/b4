@@ -24,6 +24,7 @@ import { App2Component } from './app2/app2.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, BrowserAnimationsModule, NoopAnimationsModule
   ],
   providers: [BusyService, SiderBarService],
   bootstrap: [App2Component]

@@ -47,6 +47,11 @@ export class Nav2Component implements OnInit {
     this.navbarShow = false;
     this.router.navigate([item.path]);
     this.siderBar.setSider(item.childs);
+    // this.siderBar.setBreadPub(item);
+  }
+
+  private calbread(item: HeaderItem) {
+
   }
 
   togglenavbar() {

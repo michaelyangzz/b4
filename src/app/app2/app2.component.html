@@ -11,7 +11,7 @@
       <div [class.col-md-10]="sidersbarservice.Items.length" 
            [class.col-md-12]="!(sidersbarservice.Items.length)">
       <!-- <div class="col-md-10"> -->
-        <app-bread [Items]="breadItems"></app-bread>
+        <app-bread [Items]="sidersbarservice.Breads"></app-bread>
         <router-outlet></router-outlet>
       </div>
     </div>

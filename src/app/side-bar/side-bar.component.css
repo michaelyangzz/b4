@@ -1,9 +1,42 @@
 .list-group .list-group-item {
     padding: 8px 13px;
-    cursor: pointer;
     border: none;
 }
 
-.list-group .list-group-item:hover {
-    background-color: rgb(218, 218, 218);
+.list-group .list-group-item.open .oi-chevron-right {
+    transform: rotate(90deg);
+}
+
+.list-group .list-group-item.open>.list-group {
+    display: flex;
+}
+
+.list-group .list-group-item.open>.list-group .list-group-item {
+    padding-right: 0;
+}
+
+.list-group .list-group-item>.list-group {
+    display: none;
+}
+
+.list-group .list-group-item:not(.open):hover {
+    background-color: rgb(233, 233, 233);
+}
+
+.iconfont {
+    font-size: 0.8em;
+    padding-top: 6px;
+}
+
+.iconfont2 {
+    font-size: 1em;
+    padding-top: 3px;
+    width:12%;
+    margin-right: 6px;
+}
+
+.iconfont3 {
+    padding-top: 8px;
+    font-size: 0.7em;
+    width:12%;
 }

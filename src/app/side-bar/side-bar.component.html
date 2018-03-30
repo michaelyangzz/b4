@@ -1,20 +1,32 @@
-<div class="list-group">
+<div class="list-group noselect">
   <div *ngFor="let item of siderBarService.Items" class="list-group-item " 
-    [class.active]="item.isActive"
-    [class.disabled]="item.disabled">
-    {{item.name}}
+  [class.active]="item.isActive" [class.disabled]="item.disabled"
+    [class.open]="item.isOpen">
+    <a (click)="clickleftitem(item)" class="d-flex">
+      <span *ngIf="item.iconName" [class]="item.iconName" [class.iconfont2]="true"></span>
+      {{item.name}}
+      <span *ngIf="item.childs.length" class="oi iconfont ml-auto oi-chevron-right"></span>
+    </a>
     <div *ngIf="item.childs.length" class="list-group">
       <div *ngFor="let sub of item.childs" class="list-group-item " 
-        [class.active]="sub.isActive" 
-        [class.disabled]="sub.disabled">
-        {{sub.name}}
+      [class.active]="sub.isActive" [class.disabled]="sub.disabled"
+        [class.open]="sub.isOpen">
+        <a (click)="clickleftitem(sub)" class="d-flex">
+          <span *ngIf="sub.iconName" [class]="sub.iconName" [class.iconfont2]="true"></span>
+          {{sub.name}}
+          <span *ngIf="sub.childs.length" class="oi iconfont ml-auto oi-chevron-right"></span>
+        </a> 
         <div *ngIf="sub.childs.length" class="list-group">
-            <div *ngFor="let subsub of sub.childs" class="list-group-item " 
-              [class.active]="subsub.isActive" 
-              [class.disabled]="subsub.disabled">
+          <div *ngFor="let subsub of sub.childs" class="list-group-item " 
+          [class.active]="subsub.isActive" [class.disabled]="subsub.disabled"
+            [class.open]="subsub.isOpen">
+            <a (click)="clickleftitem(subsub)" class="d-flex">
+              <span *ngIf="subsub.iconName" [class]="subsub.iconName" [class.iconfont3]="true"></span>
               {{subsub.name}}
-            </div>
+              <span *ngIf="subsub.childs.length" class="oi iconfont ml-auto oi-chevron-right"></span>
+            </a> 
           </div>
+        </div>
       </div>
     </div>
   </div>

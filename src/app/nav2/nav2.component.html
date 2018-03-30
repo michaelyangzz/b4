@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" routerLink='home' (click)="navbarShow=flase;">Navbar</a>
+  <a class="navbar-brand" routerLink='home' (click)="navbarShow=false;">Navbar</a>
   <button class="navbar-toggler" type="button" (click)="togglenavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,11 +11,14 @@
       (click)="clickmenu1(every)">
         <a class="nav-link" [class.disabled]="every.disabled" [class.dropdown-toggle]="every.childs.length" 
           appIfDataToggle value="dropdown" [isNeed]="every.childs.length">
-          <i *ngIf="every.iconName" class="material-icons">{{every.iconName}}</i>
+          <span *ngIf="every.iconName" [class]="every.iconName"></span>
           {{every.name}}
         </a>
         <div *ngIf="every.childs.length" class="dropdown-menu">
-          <a *ngFor="let sub of every.childs" class="dropdown-item" [class.disabled]="sub.disabled" (click)="clickmenu2(sub)" >{{sub.name}}</a>
+          <a *ngFor="let sub of every.childs" class="dropdown-item" [class.disabled]="sub.disabled" (click)="clickmenu2(sub)" >
+           <span *ngIf="sub.iconName" [class]="sub.iconName"></span>
+            {{sub.name}}
+          </a>
         </div>
       </li>
     </ul>
