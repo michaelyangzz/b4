@@ -1,4 +1,4 @@
-<div class="list-group noselect">
+<div class="list-group noselect" *ngIf="siderBarService.showSider" >
   <div *ngFor="let item of siderBarService.Items" class="list-group-item " 
   [class.active]="item.isActive" [class.disabled]="item.disabled"
     [class.open]="item.isOpen">

@@ -17,5 +17,17 @@ export class App2Component implements OnInit {
   constructor(public busy: BusyService, public sidersbarservice: SiderBarService) { }
 
   ngOnInit() {
+    this.initialMobileFlag();
+  }
+
+  initialMobileFlag() {
+    const ua = navigator.userAgent;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)) {
+      this.sidersbarservice.isMobile = true;
+    } else if (/Chrome/i.test(ua)) {
+
+    } else {
+
+    }
   }
 }

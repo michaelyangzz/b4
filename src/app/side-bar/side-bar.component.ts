@@ -9,10 +9,7 @@ import { HeaderItem } from '../model/header-item';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
-  stateDrop = 'inactive';
   constructor(public siderBarService: SiderBarService) { }
-
   ngOnInit() {
   }
   clickleftitem(item: HeaderItem) {
@@ -21,7 +18,12 @@ export class SideBarComponent implements OnInit {
     }
 
     if (item.path) {
+      if (this.siderBarService.isMobile) {
+        this.siderBarService.showSider = false;
+      }
 
+      this.siderBarService.Breads = [];
+      this.siderBarService.setBreadPub(item);
     }
   }
 }

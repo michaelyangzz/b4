@@ -1,12 +1,12 @@
 export class HeaderItem {
     id: number;
+    parentId: number;
     name: string;
     iconName: string;
     path: string;
     isActive = false;
     disabled = false;
     isOpen = false;
-    isExpand = false;
     childs: HeaderItem[] = [];
 }
 
@@ -32,9 +32,9 @@ export class HeaderEntity {
         { id: 15, parentId: 13, name: 'Menu4.4.2', iconName: 'oi oi-command', path: 'home' },
         { id: 16, parentId: 13, name: 'Menu4.4.3', iconName: 'oi oi-command', path: 'home' },
 
-        { id: 17, parentId: 13, name: 'Menu4.4.4', iconName: 'oi oi-command', path: 'home' },
+        { id: 17, parentId: 13, name: 'Menu4.4.4', iconName: 'oi oi-command', path: null },
 
-        { id: 18, parentId: 17, name: 'Menu4.4.4.1', iconName: 'oi oi-command', path: 'home' },
+        { id: 18, parentId: 17, name: 'Menu4.4.4.1', iconName: 'oi oi-command', path: null },
         { id: 19, parentId: 18, name: 'Menu4.4.4.1.1', iconName: 'oi oi-command', path: 'home' },
         { id: 20, parentId: 18, name: 'Menu4.4.4.1.2', iconName: 'oi oi-command', path: 'home' },
         { id: 21, parentId: 18, name: 'Menu4.4.4.1.3', iconName: 'oi oi-command', path: 'home' },
@@ -50,6 +50,9 @@ export class HeaderEntity {
         { id: 27, parentId: null, name: 'Menu5', iconName: 'oi oi-command', path: 'home' },
         { id: 28, parentId: null, name: 'Menu6', iconName: 'oi oi-command', path: 'home' }
     ];
+
+    public static tree = [];
+
     id: number;
     parentId: number;
     name: string;
@@ -60,7 +63,6 @@ export class HeaderEntity {
 export function ConvertViewModel(list) {
     const map = {};
     let node;
-    const roots = [];
     let i;
     for (i = 0; i < list.length; i++) {
         map[list[i].id] = i; // initialize the map
@@ -68,7 +70,6 @@ export function ConvertViewModel(list) {
         list[i].disabled = false;
         list[i].isOpen = false;
         list[i].childs = [];
-        list[i].isExpand = false;
     }
     for (i = 0; i < list.length; i++) {
         node = list[i];
@@ -76,8 +77,8 @@ export function ConvertViewModel(list) {
             // if you have dangling branches check that map[node.parentId] exists
             list[map[node.parentId]].childs.push(node);
         } else {
-            roots.push(node);
+            HeaderEntity.tree.push(node);
         }
     }
-    return roots;
+    return HeaderEntity.tree;
 }

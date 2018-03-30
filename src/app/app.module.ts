@@ -23,6 +23,7 @@ import { Function3Component } from './components/function3/function3.component';
 import { App2Component } from './app2/app2.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { AppUiModule } from './app-ui/app-ui.module';
 
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -50,7 +51,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, NoopAnimationsModule
+    AppRoutingModule, BrowserAnimationsModule, NoopAnimationsModule, AppUiModule
   ],
   providers: [BusyService, SiderBarService],
   bootstrap: [App2Component]

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HeaderItem } from '../model/header-item';
+import { HeaderItem, HeaderEntity } from '../model/header-item';
 
 @Injectable()
 export class SiderBarService {
   public Items: HeaderItem[];
   public Breads: string[];
+  public isMobile = false;
+  public showSider = true;
   constructor() {
     this.Items = [];
     this.Breads = [];
@@ -12,17 +14,15 @@ export class SiderBarService {
 
   public setSider(items) {
     this.Items = items;
+    this.showSider = true;
   }
 
-  public setBreadPub(item: HeaderItem) {
-    this.Breads = [];
-    this.setBread(item);
-  }
-
-  private setBread(item: HeaderItem) {
-    if (item) {
-        this.setBread(item);
+  public setBreadPub(item) {
+    if (item.parentId == null) {
+      this.Breads.push(item.name);
     } else {
+      const pa = HeaderEntity.list.find(x => x.id === item.parentId);
+      this.setBreadPub(pa);
       this.Breads.push(item.name);
     }
   }

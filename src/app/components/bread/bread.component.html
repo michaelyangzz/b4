@@ -1,4 +1,4 @@
-<ol class="breadcrumb mybread text-info bg-light">
+<ol *ngIf="Items && Items.length" class="breadcrumb mybread text-info bg-light">
   <li *ngFor="let item of Items; let i=index;" 
       class="breadcrumb-item"
       [class.active]="Items.length===(i+1)">
