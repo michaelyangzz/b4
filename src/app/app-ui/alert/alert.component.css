@@ -1,0 +1,7 @@
+.mycustomalert {
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    padding-top: 14%;
+    background-color: transparent;
+}

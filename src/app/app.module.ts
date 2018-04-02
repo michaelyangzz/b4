@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -8,6 +9,7 @@ import { DemoComponent } from './components/demo/demo.component';
 import { IfDataToggleDirective } from './directives/if-data-toggle.directive';
 import { BusyService } from './services/busy.service';
 import { SiderBarService } from './services/sider-bar.service';
+import { AlertService } from './services/alert.service';
 import { BreadComponent } from './components/bread/bread.component';
 import { Demo2Component } from './components/demo2/demo2.component';
 import { Subfunction1Component } from './components/subfunction1/subfunction1.component';
@@ -51,9 +53,10 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, NoopAnimationsModule, AppUiModule
+    AppRoutingModule, BrowserAnimationsModule, NoopAnimationsModule, AppUiModule,
+    NgbModule.forRoot()
   ],
-  providers: [BusyService, SiderBarService],
+  providers: [BusyService, SiderBarService, AlertService],
   bootstrap: [App2Component]
 })
 export class AppModule { }

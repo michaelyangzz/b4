@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusyService } from '../services/busy.service';
+
 import { SiderBarService } from '../services/sider-bar.service';
 import { Router, NavigationStart } from '@angular/router';
 import { pipe } from 'rxjs/util/pipe';
@@ -14,7 +14,7 @@ import { HeaderItem, ConvertViewModel, HeaderEntity } from '../model/header-item
 })
 export class App2Component implements OnInit {
   HeaderItems = ConvertViewModel(HeaderEntity.list);
-  constructor(public busy: BusyService, public sidersbarservice: SiderBarService) { }
+  constructor(public sidersbarservice: SiderBarService) { }
 
   ngOnInit() {
     this.initialMobileFlag();
@@ -30,4 +30,6 @@ export class App2Component implements OnInit {
 
     }
   }
+
+
 }

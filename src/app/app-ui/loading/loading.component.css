@@ -1,0 +1,12 @@
+.loadingspin {
+    background-image: url('/assets/images/CircleBlue.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 6rem;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    padding-top: 15rem;
+    font-weight: bold;
+}
