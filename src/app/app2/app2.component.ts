@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { HeaderItem, ConvertViewModel, HeaderEntity } from '../model/header-item';
 
 @Component({
-  selector: 'app-app2',
+  selector: 'app-app2, [app-app2]',
   templateUrl: './app2.component.html',
   styleUrls: ['./app2.component.css']
 })
